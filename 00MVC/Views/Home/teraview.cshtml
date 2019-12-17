@@ -1,0 +1,27 @@
+﻿@model IEnumerable<_00MVC.Models.Emp>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>teraview</title>
+</head>
+<body>
+    <table style="height:100%; width:400px" border="1">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>  
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.No</td>
+                <td>@emp.Name</td>
+                <td>@emp.Address</td>
+            </tr>
+        }
+       
+    </table>
+</body>
+</html>

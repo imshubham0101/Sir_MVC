@@ -1,0 +1,39 @@
+﻿
+@model   IEnumerable<DemoMVC.Models.Emp>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <a href="/Login/SignOut">Logout</a>
+    <br/>  
+    <a class="active" href="/Home/Create">Create</a>
+    <br />  
+ <div class="table-responsive">
+     <table class="table">
+         <tr>
+             <th>No</th><th>Name</th><th>Address</th>
+         </tr>
+         @foreach (var emp in Model)
+         {
+            <tr>
+                <td>@emp.No</td>
+                <td>@emp.Name</td>
+                <td>@emp.Address</td>
+                <td>
+                    <a href="/Home/Edit/@emp.No" class="active">Edit</a>
+                    @*<a href="/Home/Edit?no=@emp.No" class="active">Edit</a>*@
+                    <a href="/Home/Delete/@emp.No" class="active">Delete</a>
+                </td>
+            </tr>
+         }
+     </table>
+ </div>
+</body>
+</html>
